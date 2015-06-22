@@ -1,9 +1,9 @@
-class CompaniesController < ApplicationController
+class ProjectsController < ApplicationController
   def index
-    @companies = Company.all
+    @projects =Project.all
   end
 
   def show
-    @companies = Company.find(params[:id])
+    @project = project.find(params[:id])
   end
 end

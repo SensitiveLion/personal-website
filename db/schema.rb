@@ -11,38 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150619205331) do
+ActiveRecord::Schema.define(version: 20150622181217) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "categories", force: :cascade do |t|
-    t.integer "company_id", null: false
-    t.string  "name",       null: false
+  create_table "profiles", force: :cascade do |t|
+    t.string "name",       null: false
+    t.text   "skills",     null: false
+    t.text   "experience", null: false
+    t.string "biography",  null: false
+    t.string "image_link", null: false
   end
 
-  create_table "companies", force: :cascade do |t|
-    t.integer "user_id",             null: false
-    t.integer "category_id",         null: false
-    t.string  "address",             null: false
-    t.string  "size",                null: false
-    t.string  "product_description", null: false
-    t.string  "company_culture",     null: false
-    t.string  "name",                null: false
-  end
-
-  create_table "documents", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.string  "title",   null: false
-    t.text    "body",    null: false
-  end
-
-  create_table "job_listings", force: :cascade do |t|
-    t.integer "user_id",     null: false
-    t.integer "company_id",  null: false
+  create_table "projects", force: :cascade do |t|
+    t.integer "profile_id",  null: false
     t.string  "title",       null: false
+    t.string  "link",        null: false
     t.string  "description", null: false
-    t.string  "contact"
+    t.string  "image_link"
   end
 
   create_table "users", force: :cascade do |t|
