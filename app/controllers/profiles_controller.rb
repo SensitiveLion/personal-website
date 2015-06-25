@@ -1,10 +1,7 @@
 class ProfilesController < ApplicationController
-  def index
-    @Profiles = Profile.all
-  end
-
   def show
-    @Profile = Profile.find(params[:id])
+    @profile = Profile.find(params[:id])
+    @projects = projects.all
   end
 
   def new
