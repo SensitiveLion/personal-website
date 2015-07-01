@@ -15,8 +15,6 @@
  *= require_self
  *= require foundation_and_overrides
  *= require_tree ./modules
- *= require slick
- *= require slick-theme
 
  */
 $nexa-font: "Nexa Light", sans-serif;
@@ -58,7 +56,7 @@ $unvisited-color: #ff3300;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  width: 110%;
+  width: 100%;
   z-index: 0;
   position: relative;
   left: -1em;
@@ -209,7 +207,8 @@ a:hover {
   padding-top: 140px;
 }
 
-.carousel {
-    position: relative;
-    right: 13%;
+.large-12 hide-for-small {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
