@@ -17,11 +17,11 @@ ActiveRecord::Schema.define(version: 20150701162432) do
   enable_extension "plpgsql"
 
   create_table "profiles", force: :cascade do |t|
-    t.string "name",       null: false
-    t.text   "skills",     null: false
-    t.text   "experience", null: false
-    t.string "biography",  null: false
-    t.string "image_link", null: false
+    t.string  "name",       null: false
+    t.text    "experience", null: false
+    t.string  "biography",  null: false
+    t.string  "image_link", null: false
+    t.integer "skills"
   end
 
   create_table "projects", force: :cascade do |t|
