@@ -18,36 +18,19 @@
       </div>
 
       <div class="field">
-        <%= f.label :max_players, "maximum players" %>
-        <%= f.number_field :max_players %>
+        <%= f.label :experience, "experience" %>
+        <%= f.number_field :experience %>
       </div>
 
       <div class="field">
-        <%= f.label :playing_time, "playing time (min)" %>
-        <%= f.number_field :playing_time %>
+        <%= f.label :biography, "biography" %>
+        <%= f.number_field :biography %>
       </div>
 
       <div class="field">
-        <%= f.label :complexity, "complexity" %>
-        <%= f.select :complexity, options_for_select(
-          [['low',1],['medium',2],['high',3],['extreme',4]]
-        ) %>
+        <%= f.label :image_link, "profile picture link" %>
+        <%= f.text_area :image_link %>
       </div>
-
-    <%if current_user && current_user.has_authority? %>
-      <div class="field">
-        <%= f.label :amazon_html, "amazon html" %>
-        <%= f.text_area :amazon_html %>
-      </div>
-    <%end%>
-
-      <div class="field">
-        <%= f.label :description, "description" %>
-        <%= f.text_area :description %>
-      </div>
-
-      <%= image_tag(@profile.photo_url) if @profile.photo? %>
-      <%= f.file_field :photo %>
 
       <div class="actions">
         <%= f.submit "add profile" %>
