@@ -1,0 +1,40 @@
+%- if @profile.errors.present? -%>
+  <%- @profile.errors.full_messages.each do |error| -%>
+    <ul>
+      <li><%= error %></li>
+    </ul>
+  <% end %>
+<% end %>
+
+<h1>enter the profile information</h1>
+
+<div class="row">
+  <div class="small-8 large-centered column">
+    <%= form_for @profile do |f| %>
+
+      <div class="field">
+        <%= f.label :name, "name" %>
+        <%= f.text_field :name %>
+      </div>
+
+      <div class="field">
+        <%= f.label :experience, "experience" %>
+        <%= f.number_field :experience %>
+      </div>
+
+      <div class="field">
+        <%= f.label :biography, "biography" %>
+        <%= f.number_field :biography %>
+      </div>
+
+      <div class="field">
+        <%= f.label :image_link, "profile picture link" %>
+        <%= f.text_area :image_link %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "add profile" %>
+      </div>
+    <% end %>
+  </div>
+</div>

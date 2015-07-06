@@ -13,6 +13,9 @@
         <h4>Skills</h4><hr>
         <% if @profile.empty? %>
           No skills matched your search
+          <% if current_user != nil && current_user.has_authority? %>
+            <%= link_to "add a new project", new_profile_project_path %>
+          <% end %>
         <% else %>
           <% @profile.skills.each do |skill| %>
             <div class="row">

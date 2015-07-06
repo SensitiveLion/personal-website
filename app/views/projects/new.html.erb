@@ -1,0 +1,40 @@
+%- if @project.errors.present? -%>
+  <%- @project.errors.full_messages.each do |error| -%>
+    <ul>
+      <li><%= error %></li>
+    </ul>
+  <% end %>
+<% end %>
+
+<h1>enter the project information</h1>
+
+<div class="row">
+  <div class="small-8 large-centered column">
+    <%= form_for @project do |f| %>
+
+      <div class="field">
+        <%= f.label :title, "title" %>
+        <%= f.text_field :title %>
+      </div>
+
+      <div class="field">
+        <%= f.label :link, "link" %>
+        <%= f.number_field :link %>
+      </div>
+
+      <div class="field">
+        <%= f.label :description, "description" %>
+        <%= f.number_field :description %>
+      </div>
+
+      <div class="field">
+        <%= f.label :image_link, "project picture link" %>
+        <%= f.text_area :image_link %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "add project" %>
+      </div>
+    <% end %>
+  </div>
+</div>
